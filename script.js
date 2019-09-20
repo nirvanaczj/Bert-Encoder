@@ -34,7 +34,7 @@ function myFunction() {
           result_2.innerHTML ="This is the result of text 2";
           document.getElementById("result").appendChild(result_2);
           var second_text_encoded = result_array[1];
-       //   console.log(second_text_encoded.length);
+          //  console.log(second_text_encoded.length);
         
           var arr_euclidean_element = [];
 
@@ -51,7 +51,7 @@ function myFunction() {
           var arr_diff_pow_visual = Math.pow(arr_diff,2)*200;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual", style="width:${arr_diff_pow_visual}px;height:10px;background-color: rgb(${k}, ${k}, 0);"></div>`;
+          var arr_diff_visual = `<div id="visual", style="transform: rotate(-90deg);;display：inline-block;width:${arr_diff_pow_visual}px;height:10px;background-color: rgb(${k}, ${k}, 0);"></div>`;
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
           }
     console.log(arr_euclidean_element);
