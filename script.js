@@ -51,7 +51,7 @@ function myFunction() {
           var arr_diff_pow_visual = Math.pow(arr_diff,2)*200;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual", style="transform: rotate(-90deg);;display：inline-block;width:${arr_diff_pow_visual}px;height:10px;background-color: rgb(${k}, ${k}, 0);"></div>`;
+          var arr_diff_visual = `<div id="visual", style="display：inline-block;width:20px;height:${arr_diff_pow_visual}px;background-color: rgb(${200-k}, ${50+k}, ${100-k});"></div>`;
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
           }
     console.log(arr_euclidean_element);
@@ -61,7 +61,7 @@ function myFunction() {
     console.log(sum_euclidean);
     var arr_euclidean = Math.sqrt(sum_euclidean);
     console.log("The Euclidean distance of this two sentences is :",arr_euclidean);   
-    var euclidean = `<h1>The Euclidean distance of this two sentences is :${arr_euclidean}.</h1>`;    
+    var euclidean = `<h2 style="font-family:romans;font-style:italic">The Euclidean distance of this two sentences is :${arr_euclidean}.</h2>`;    
     document.getElementById("visualization").insertAdjacentHTML('beforebegin', euclidean);}
 
   }
