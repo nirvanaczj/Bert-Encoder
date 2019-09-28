@@ -4,23 +4,45 @@
   <meta charset="UTF-8">
   <title>Bert Universal Encoder</title>
   <link rel="stylesheet" href="./main.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div id="visualization"></div>
+<div class="cursor"></div>
+<h2 id='euclidean'></h2>
+    <div id="visualization">
+    
+    </div>
 	<div class="container">
 		
-		<form class="form">
-            		<h1>Welcome to Bert Universal Encoder</h1>
+<form class="form">
+<h1>Welcome to <span style="color:cornsilk"> Bert </span>Universal Encoder</h1>
+Built by ZiJia Chen.<br>
+Tech Spec:<br>
+1. Utilizing Bert NLP Pretrained model and specfically
+<a href="https://github.com/hanxiao/bert-as-service">Hanxiao's bert-as-service  Public Repo </a><br>
+2. Deployed through Google Cloud Platform's Virtual Computing Engine.
+<br><br>
+What it can do:<br>
+    Universally mapping two different/same length of sentences into an array of 1024 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance.<br>
 
-		<!--<input id="text1" type="text" placeholder="max_length=150"><br/>-->
-             <textarea id="text1"
-                  rows = "3"
-                  cols = "80" placeholder="max_length=150"></textarea><br/>
-            <textarea id="text2"
-                  rows = "3"
-                  cols = "80" placeholder="max_length=150"></textarea><br/><br/>
-            <input type="submit" value="Submit"  onclick="myFunction()">
+
+           
+    
+    <br>
+
+             <textarea
+                  id="text1"
+                  rows = "2"
+                  cols = "40"
+                  onkeyup="showsubmitBtn(this.value)"
+                  placeholder = "try: I am hungry" ></textarea><br/><br/>
+            <textarea 
+                  id="text2"
+                  rows = "2"
+                  cols = "40"
+                  placeholder = "try: I want to eat something" onkeyup="showsubmitBtn(this.value)"></textarea><br/><br/>
+            <input type="submit" value="Test it out!"  onclick="myFunction()">
 
 		</form>
         <div id="result"></div>
