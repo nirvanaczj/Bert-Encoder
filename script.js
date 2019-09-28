@@ -4,7 +4,7 @@ var cursorMove = function(event)
 {
 	//console.log(event.pageX)
 	cursor.style.left = `${event.pageX - 8}px`
-	cursor.style.top = `${event.pageY - 8}px`
+	cursor.style.top = `${event.pageY - 9.5}px`
 	//document.body.insertAdjacentHTML('beforeend',`<div style="width:${event.pageX}px"></div>`)
 }
 
@@ -30,7 +30,7 @@ function myFunction() {
   $('form').fadeOut(0);
   var body = document.body;
   body.style.margin = '0px';
-  cursor.style.backgroundColor ='cornsilk';
+  cursor.style.backgroundColor ='white';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
   //$('.wrapper').addClass('form-success'); 
@@ -38,7 +38,7 @@ function myFunction() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange=function()
   {
-    //if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
     { 
       var result_array =  JSON.parse(xmlhttp.responseText).result;
           var test_array = [];
@@ -53,7 +53,7 @@ function myFunction() {
           var first_text_encoded = result_array[0];
           //var first_text_encoded = test_array;
         
-          for (j = 0; j < first_text_encoded.length; j++){
+          for (let j = 0; j < first_text_encoded.length; j++){
           var result_1_0 = document.createElement("div");
           result_1_0.id = `${j}th_of_first_text`;
           result_1_0.innerHTML = `"<span>${first_text_encoded[j]}</span>"`;
@@ -72,7 +72,11 @@ function myFunction() {
         
           var arr_euclidean_element = [];
 
-          for (k = 0; k < second_text_encoded.length; k++){
+          for (let k = 0; k < second_text_encoded.length; k++){
+          (function(k){
+              setTimeout(function(){
+                         
+          
           var result_2_0 = document.createElement("div");
           result_2_0.id = `${k}th_of_second_text`;
           result_2_0.innerHTML = `"<span>${second_text_encoded[k]}</span>"`;
@@ -85,9 +89,20 @@ function myFunction() {
           var arr_diff_pow_visual = Math.pow(arr_diff,2)*200;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual", style="display：inline-block;width:3px;height:${arr_diff_pow_visual*4}px;background-color: rgb(${100+arr_diff_pow_visual}, 164, 169);"></div>`;
-          document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);}
+          var arr_diff_visual = `<div id="visual", style="display：inline-block;width:3px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual}, 164, 169);"></div>`;
+          console.log(arr_diff_visual);
+          //setTimeout(function() {
+          document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
+          //}, 100*(k+1));
+              
+              
+        
+          },5*(k+1));})(k);
+          
           }
+          
+          }
+    setTimeout(function(){   
     console.log(arr_euclidean_element);
     var sum_euclidean = 0;
     for (var i=0; i < arr_euclidean_element.length; i++){
@@ -98,18 +113,19 @@ function myFunction() {
     var euclidean = `<h2 style="margin-left:5px;position:fixed;left:0px;">The Euclidean distance of this two sentences is :${arr_euclidean}.</h2>`; 
     var euclidean_str = `The Euclidean distance of this two sentences is :${arr_euclidean}.` 
     var b = 0;
-    function typeWritter(){
+    var typeWriter = function(){
         if(b < euclidean_str.length){
-            document.getElementById('euclidean').innerHTML += euclidean_str(b);
+            document.getElementById('euclidean').innerHTML += euclidean_str[b];
             b++;
-            setTimeout(typeWritter,50);
+            setTimeout(typeWriter,10);
         }
     }
-    
-    document.getElementById("visualization").insertAdjacentHTML('beforebegin', euclidean);
+   typeWriter();},5125)  
+   
+   // document.getElementById("visualization").insertAdjacentHTML('beforebegin', //euclidean);
 
   }
-  xmlhttp.open("POST","http://35.196.190.127:11233/encode",true);
+  xmlhttp.open("POST","http://34.73.255.246:11233/encode",true);
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlhttp.send(JSON.stringify({"id": 1,"texts": [text1,text2], "is_tokenized": false}));   
 };
