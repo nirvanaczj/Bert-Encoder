@@ -86,10 +86,10 @@ function myFunction() {
           var r2 = `${second_text_encoded[k]}`;
           var arr_diff = r1-r2;
           var arr_diff_pow = Math.pow(arr_diff,2);
-          var arr_diff_pow_visual = Math.pow(arr_diff,2)*200;
+          var arr_diff_pow_visual = Math.pow(arr_diff,2)*80;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual", style="display：inline-block;width:3px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual}, 164, 169);"></div>`;
+          var arr_diff_visual = `<div id="visual" onMouseOver="this.style.color='#0F0'"  style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
           console.log(arr_diff_visual);
           //setTimeout(function() {
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
