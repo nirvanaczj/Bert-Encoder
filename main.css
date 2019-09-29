@@ -17,6 +17,7 @@ h2:hover{
 #euclidean{
     z-index: 100;
     color:black;
+    position:fixed;
     font-size:2em;
     margin-left:8px;
 }
