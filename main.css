@@ -18,6 +18,7 @@ h2:hover{
     z-index: 100;
     color:black;
     position:fixed;
+
     font-size:1.6em;
     margin-left:8px;
     color:white;
@@ -50,6 +51,7 @@ h2:hover{
 .refresh:hover{
     background:cornsilk;
 }
+
 body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
@@ -131,5 +133,6 @@ input[type=submit] {
     z-index:100;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
+
 }
 

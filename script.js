@@ -31,6 +31,7 @@ function myFunction() {
   var body = document.body;
   body.style.margin = '0px';
   refresh.style.display = 'block';
+  
   cursor.style.backgroundColor ='white';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
@@ -91,12 +92,13 @@ function myFunction() {
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
           var arr_diff_visual = `<div id="visual" backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" onMouseOver=" this.style.filter='saturate(10)';this.style.width='20px'"  onMouseOut="setTimeout(this.style.width='4px';this.style.filter='saturate(1)'",3000)" style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
+
+          var arr_diff_visual = `<div id="visual" onMouseOver="this.style.color='#0F0'"  style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
           console.log(arr_diff_visual);
           //setTimeout(function() {
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
           //}, 100*(k+1));
-              
-              
+
           },5*(k+1));})(k);
           
           }
