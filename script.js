@@ -1,4 +1,11 @@
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+
 var cursor = document.querySelector('.cursor')
+var refresh = document.querySelector('.refresh')
+var boxNumber = document.querySelector('.boxNumber')
 
 var cursorMove = function(event)
 {
@@ -25,11 +32,27 @@ var showsubmitBtn = function(str){
 }
 
 
+var time = 0;
+
+function reCoverSpecific(x){
+console.log(time)
+if(time === 0){
+    console.log('sadasds')
+    x.style.filter = 'invert(0%)';
+    x.style.width = '4px';
+    var time = 1;
+    setTimeout(function(){var time = 0},5000)
+}
+}
+
+
 function myFunction() {
   event.preventDefault();
   $('form').fadeOut(0);
   var body = document.body;
   body.style.margin = '0px';
+  refresh.style.display = 'block';
+  boxNumber.style.display = 'block';
   cursor.style.backgroundColor ='white';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
@@ -40,7 +63,7 @@ function myFunction() {
   {
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     { 
-      var result_array =  JSON.parse(xmlhttp.responseText).result;
+      var result_array =  JSON.parse(xmlhttp.responseText).prediction;
           var test_array = [];
           var test_array_2 = [];
           for(a = 0; a < 1024; a++){
@@ -89,15 +112,28 @@ function myFunction() {
           var arr_diff_pow_visual = Math.pow(arr_diff,2)*80;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual" onMouseOver="this.style.color='#0F0'"  style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
+          
+          var arr_diff_visual = `<div id="visual" 
+          backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" 
+          onMouseOver=" this.style.filter='invert(75%)';this.style.width='20px'; displayNumber(this)"  
+          onMouseOut= " setTimeout(reCover,5000)"     
+          
+
+          style="display：inline-block; 
+          width:4px;
+          z-index:0;
+          height:${arr_diff_pow_visual}vh;
+          background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169)
+          ;"></div>`;
           console.log(arr_diff_visual);
           //setTimeout(function() {
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
           //}, 100*(k+1));
-              
-              
-        
+          function scrol(){ window.scrollTo((4*k),0);}    
+          scrol();    
           },5*(k+1));})(k);
+          
+          
           
           }
           
@@ -125,8 +161,23 @@ function myFunction() {
    // document.getElementById("visualization").insertAdjacentHTML('beforebegin', //euclidean);
 
   }
-  xmlhttp.open("POST","http://34.73.255.246:11233/encode",true);
+  xmlhttp.open("POST","http://34.70.204.51:5000",true);
+  xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');    
+  xmlhttp.setRequestHeader("Access-Control-Allow-Origin","*");
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xmlhttp.send(JSON.stringify({"id": 1,"texts": [text1,text2], "is_tokenized": false}));   
+  xmlhttp.send(JSON.stringify({"query": [text1,text2]}));   
 };
   
+function displayNumber(x){
+document.querySelector('.distance').innerHTML = `${x.style.height.slice(0,-2)}`
+}
+
+function reCover(){
+    var visual = document.querySelectorAll('#visual')
+    for (var i = 0; i < visual.length; i++){
+    visual[i].style.filter = 'invert(0%)';
+    visual[i].style.width = '4px';}
+}
+
+
+
