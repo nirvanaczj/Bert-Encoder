@@ -90,7 +90,7 @@ function myFunction() {
           var arr_diff_pow_visual = Math.pow(arr_diff,2)*80;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
-          var arr_diff_visual = `<div id="visual" backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" onMouseOver="this.style.backgroundColor='#fff8dc';this.style.width='20px'"  style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
+          var arr_diff_visual = `<div id="visual" backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" onMouseOver=" this.style.filter='saturate(10)';this.style.width='20px'"  onMouseOut="setTimeout(this.style.width='4px';this.style.filter='saturate(1)'",3000)" style="display：inline-block;width:4px;z-index:0;height:${arr_diff_pow_visual}vh;background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169);"></div>`;
           console.log(arr_diff_visual);
           //setTimeout(function() {
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);
