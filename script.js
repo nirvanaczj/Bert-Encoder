@@ -51,8 +51,6 @@ function myFunction() {
   $('form').fadeOut(0);
   var body = document.body;
   body.style.margin = '0px';
-  refresh.style.display = 'block';
-  boxNumber.style.display = 'block';
   cursor.style.backgroundColor ='white';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
@@ -60,13 +58,24 @@ function myFunction() {
     
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange=function()
-  {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  { if (xmlhttp.status != 200){
+      document.querySelector('.full').style.display = 'flex';
+      document.querySelector('.loading').style.display = 'block';
+      body.style.overflow = 'hidden';
+  }
+    else if (xmlhttp.readyState==4 && xmlhttp.status==200)
     { 
+      document.querySelector('.full').style.display = 'none';
+      document.querySelector('.loading').style.display = 'none';
+      body.style.overflow = 'visible';    
+      refresh.style.display = 'block';
+      boxNumber.style.display = 'block';
       var result_array =  JSON.parse(xmlhttp.responseText).prediction;
+      var cosine =  JSON.parse(xmlhttp.responseText).cosine;
+      var euclidean_api =  JSON.parse(xmlhttp.responseText).euclidean;
           var test_array = [];
           var test_array_2 = [];
-          for(a = 0; a < 1024; a++){
+          for(a = 0; a < 512; a++){
               test_array.push(Math.random())
               test_array_2.push(Math.random())}
           var result_1 = document.createElement("div");
@@ -109,7 +118,7 @@ function myFunction() {
           var r2 = `${second_text_encoded[k]}`;
           var arr_diff = r1-r2;
           var arr_diff_pow = Math.pow(arr_diff,2);
-          var arr_diff_pow_visual = Math.pow(arr_diff,2)*80;
+          var arr_diff_pow_visual = Math.pow(arr_diff,2)*5000;
           arr_euclidean_element.push(arr_diff_pow)
           console.log(arr_diff_pow_visual);
           
@@ -148,20 +157,31 @@ function myFunction() {
     console.log("The Euclidean distance of this two sentences is :",arr_euclidean);   
     var euclidean = `<h2 style="margin-left:5px;position:fixed;left:0px;">The Euclidean distance of this two sentences is :${arr_euclidean}.</h2>`; 
     var euclidean_str = `The Euclidean distance of this two sentences is :${arr_euclidean}.` 
+    var cosine_str = `The Cosine distance of this two sentences is :${cosine}.` 
     var b = 0;
+    var d = 0;
     var typeWriter = function(){
         if(b < euclidean_str.length){
             document.getElementById('euclidean').innerHTML += euclidean_str[b];
             b++;
             setTimeout(typeWriter,10);
         }
+        if(b == euclidean_str.length){
+           if(d < cosine_str.length){
+            document.getElementById('cosine').innerHTML += cosine_str[d];
+            d++;
+            setTimeout(typeWriter,10);
+        } 
+            
+        }
     }
-   typeWriter();},5125)  
+    
+   typeWriter();},2562)  
    
    // document.getElementById("visualization").insertAdjacentHTML('beforebegin', //euclidean);
 
   }
-  xmlhttp.open("POST","http://34.70.204.51:5000",true);
+  xmlhttp.open("POST","http://api.zijiachen.com/tf",true);
   xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');    
   xmlhttp.setRequestHeader("Access-Control-Allow-Origin","*");
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");

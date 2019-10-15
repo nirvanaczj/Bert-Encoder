@@ -5,26 +5,43 @@
   <title>Bert Universal Encoder</title>
   <link rel="stylesheet" href="./main.css">
   <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
   <meta http-equiv="Access-Control-Allow-Origin" content="*" />  
 </head>
 <body>
+    
+<div class="full"> <div class="center"></div><br>Trying my best to encode</div>
+<div class="loading">
+Trying my best to encode...
+</div>
+
 <div class="cursor"></div>
-<h2 id='euclidean'></h2>
+<h2 id='euclidean'></h2><br><br>
+<h2 id='cosine'></h2>
     <div id="visualization">
     
     </div>
 	<div class="container">
 <form class="form">
-<h1>Welcome to <span style="color:cornsilk"> Bert </span>Universal Encoder</h1>
+<div class='left'>
+<h1>Welcome to <span style="color:cornsilk"> TensorFlow </span>Universal Encoder</h1>
 <span style="font-size:1.5em">Built by ZiJia Chen.</span><br><br>
 Tech Spec:<br>
-1. Utilizing Bert NLP Pretrained model and specfically
-<a href="https://bert-as-service.readthedocs.io/en/latest/" target="_blank" >Hanxiao's bert-as-service  Public Repo </a><br>
+1. Utilizing TensorFlow Hub universal sentrence encoder and specfically
+<a href="https://tfhub.dev/google/universal-sentence-encoder-large/3" target="_blank" >TF large universal sentence encoder </a><br>
 2. Deployed through Google Cloud Platform's Virtual Computing Engine.<br>
 3. Utilized Flask as server framework.
 <br><br>
-What it can do:<br>
-    Universally mapping two different/same length of sentences into an array of 1024 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance.<br>
+    What it can do:<br>
+    Universally mapping two different/same length of sentences into an array of 512 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance & Cosine Distance.<br>
+</div>
+<div class='right'>
+<span style="font-size:1.5em">Introduction to TF Universal Encoder</span><br>
+<p>
+    </p>The Universal Sentence Encoder encodes text into high dimensional vectors that can be used for text classification, semantic similarity, clustering and other natural language tasks.
+
+The model is trained and optimized for greater-than-word length text, such as sentences, phrases or short paragraphs. It is trained on a variety of data sources and a variety of tasks with the aim of dynamically accommodating a wide variety of natural language understanding tasks. The input is variable length English text and the output is a 512 dimensional vector. The universal-sentence-encoder-large model is trained with a Transformer encoder.<br></div>
+
 
 
            
