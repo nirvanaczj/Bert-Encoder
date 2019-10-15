@@ -5,12 +5,11 @@
   <title>Bert Universal Encoder</title>
   <link rel="stylesheet" href="./main.css">
   <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
   <meta http-equiv="Access-Control-Allow-Origin" content="*" />  
 </head>
 <body>
     
-<div class="full"> <div class="center"></div><br>Trying my best to encode</div>
+<div class="full"> <div class="center"></div><br></div>
 <div class="loading">
 Trying my best to encode...
 </div>
@@ -24,23 +23,25 @@ Trying my best to encode...
 	<div class="container">
 <form class="form">
 <div class='left'>
-<h1>Welcome to <span style="color:cornsilk"> TensorFlow </span>Universal Encoder</h1>
+<h1>Welcome to <span style="color:cornsilk"> Bert </span>Universal Encoder</h1>
 <span style="font-size:1.5em">Built by ZiJia Chen.</span><br><br>
 Tech Spec:<br>
-1. Utilizing TensorFlow Hub universal sentrence encoder and specfically
-<a href="https://tfhub.dev/google/universal-sentence-encoder-large/3" target="_blank" >TF large universal sentence encoder </a><br>
+1. Utilizing Bert NLP Pretrained model and specfically
+<a href="https://bert-as-service.readthedocs.io/en/latest/" target="_blank" >Hanxiao's bert-as-service Public Repo </a><br>
 2. Deployed through Google Cloud Platform's Virtual Computing Engine.<br>
 3. Utilized Flask as server framework.
 <br><br>
     What it can do:<br>
-    Universally mapping two different/same length of sentences into an array of 512 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance & Cosine Distance.<br>
+    Universally mapping two different/same length of sentences into an array of 1024 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance & Cosine Distance.<br>
 </div>
 <div class='right'>
-<span style="font-size:1.5em">Introduction to TF Universal Encoder</span><br>
+<span style="font-size:1.5em">Introduction to bert-as-service Universal Encoder</span><br>
 <p>
-    </p>The Universal Sentence Encoder encodes text into high dimensional vectors that can be used for text classification, semantic similarity, clustering and other natural language tasks.
+    </p>BERT is a NLP model developed by Google for pre-training language representations. It leverages an enormous amount of plain text data publicly available on the web and is trained in an unsupervised manner. Pre-training a BERT model is a fairly expensive yet one-time procedure for each language. Fortunately, Google released several pre-trained models where you can download from here.<br><br>
 
-The model is trained and optimized for greater-than-word length text, such as sentences, phrases or short paragraphs. It is trained on a variety of data sources and a variety of tasks with the aim of dynamically accommodating a wide variety of natural language understanding tasks. The input is variable length English text and the output is a 512 dimensional vector. The universal-sentence-encoder-large model is trained with a Transformer encoder.<br></div>
+Sentence Encoding/Embedding is a upstream task required in many NLP applications, e.g. sentiment analysis, text classification. The goal is to represent a variable length sentence into a fixed length vector, e.g. hello world to [0.1, 0.3, 0.9]. Each element of the vector should “encode” some semantics of the original sentence.
+<br><br>
+Finally, bert-as-service uses BERT as a sentence encoder and hosts it as a service via ZeroMQ, allowing you to map sentences into fixed-length representations.<br></div>
 
 
 
