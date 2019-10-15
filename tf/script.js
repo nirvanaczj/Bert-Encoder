@@ -67,7 +67,7 @@ function myFunction() {
     { 
       document.querySelector('.full').style.display = 'none';
       document.querySelector('.loading').style.display = 'none';
-      body.style.overflow-x = 'visible';    
+      body.style.overflowX = 'visible';    
       refresh.style.display = 'block';
       boxNumber.style.display = 'block';
       var result_array =  JSON.parse(xmlhttp.responseText).prediction;
