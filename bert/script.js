@@ -36,8 +36,8 @@ var time = 0;
 
 function reCoverSpecific(x){
 console.log(time)
-if(time === 0){
-    console.log('sadasds')
+if(time == 0){
+    console.log('change')
     x.style.filter = 'invert(0%)';
     x.style.width = '4px';
     var time = 1;
@@ -67,7 +67,7 @@ function myFunction() {
     { 
       document.querySelector('.full').style.display = 'none';
       document.querySelector('.loading').style.display = 'none';
-      body.style.overflow = 'visible';    
+      body.style.overflow-x = 'visible';    
       refresh.style.display = 'block';
       boxNumber.style.display = 'block';
       var result_array =  JSON.parse(xmlhttp.responseText).prediction;

@@ -36,8 +36,8 @@ var time = 0;
 
 function reCoverSpecific(x){
 console.log(time)
-if(time === 0){
-    console.log('sadasds')
+if(time == 0){
+    console.log('change')
     x.style.filter = 'invert(0%)';
     x.style.width = '4px';
     var time = 1;
@@ -51,7 +51,7 @@ function myFunction() {
   $('form').fadeOut(0);
   var body = document.body;
   body.style.margin = '0px';
-  cursor.style.backgroundColor ='white';
+  cursor.style.backgroundColor ='gray';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
   //$('.wrapper').addClass('form-success'); 
@@ -61,13 +61,13 @@ function myFunction() {
   { if (xmlhttp.status != 200){
       document.querySelector('.full').style.display = 'flex';
       document.querySelector('.loading').style.display = 'block';
-      body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';    
   }
     else if (xmlhttp.readyState==4 && xmlhttp.status==200)
     { 
       document.querySelector('.full').style.display = 'none';
       document.querySelector('.loading').style.display = 'none';
-      body.style.overflow = 'visible';    
+      body.style.overflow-x = 'visible';    
       refresh.style.display = 'block';
       boxNumber.style.display = 'block';
       var result_array =  JSON.parse(xmlhttp.responseText).prediction;
@@ -123,7 +123,7 @@ function myFunction() {
           console.log(arr_diff_pow_visual);
           
           var arr_diff_visual = `<div id="visual" 
-          backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" 
+          backGround="rgb(${164+arr_diff_pow_visual*2}, 169, ${173-arr_diff_pow_visual*2})" 
           onMouseOver=" this.style.filter='invert(75%)';this.style.width='20px'; displayNumber(this)"  
           onMouseOut= " setTimeout(reCover,5000)"     
           
@@ -132,8 +132,8 @@ function myFunction() {
           width:4px;
           z-index:0;
           height:${arr_diff_pow_visual}vh;
-          background-color: rgb(${100+arr_diff_pow_visual*2}, 164, 169)
-          ;"></div>`;
+          background-color: rgb(${164+arr_diff_pow_visual*2}, 169, ${173-arr_diff_pow_visual*2});">
+          </div>`;
           console.log(arr_diff_visual);
           //setTimeout(function() {
           document.getElementById("visualization").insertAdjacentHTML('beforeend', arr_diff_visual);

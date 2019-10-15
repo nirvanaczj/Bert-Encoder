@@ -5,7 +5,6 @@
   <title>Bert Universal Encoder</title>
   <link rel="stylesheet" href="./main.css">
   <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
   <meta http-equiv="Access-Control-Allow-Origin" content="*" />  
 </head>
 <body>
@@ -24,7 +23,7 @@ Trying my best to encode...
 	<div class="container">
 <form class="form">
 <div class='left'>
-<h1>Welcome to <span style="color:cornsilk"> TensorFlow </span>Universal Encoder</h1>
+<h1>Welcome to <span style="color:#FBBB37"> TensorFlow </span>Universal Encoder</h1>
 <span style="font-size:1.5em">Built by ZiJia Chen.</span><br><br>
 Tech Spec:<br>
 1. Utilizing TensorFlow Hub universal sentrence encoder and specfically
@@ -33,7 +32,7 @@ Tech Spec:<br>
 3. Utilized Flask as server framework.
 <br><br>
     What it can do:<br>
-    Universally mapping two different/same length of sentences into an array of 512 elements and do <span style="color:cornsilk">Semantic Compare</span> through Euclidean Distance & Cosine Distance.<br>
+    Universally mapping two different/same length of sentences into an array of 512 elements and do <span style="color:#FBBB37">Semantic Compare</span> through Euclidean Distance & Cosine Distance.<br>
 </div>
 <div class='right'>
 <span style="font-size:1.5em">Introduction to TF Universal Encoder</span><br>
@@ -53,12 +52,12 @@ The model is trained and optimized for greater-than-word length text, such as se
                   rows = "2"
                   cols = "40"
                   onkeyup="showsubmitBtn(this.value)"
-                  placeholder = "try: I am hungry" ></textarea><br/><br/>
+                  placeholder = "try: Pytorch is weak" ></textarea><br/><br/>
             <textarea 
                   id="text2"
                   rows = "2"
                   cols = "40"
-                  placeholder = "try: I want to eat something" onkeyup="showsubmitBtn(this.value)"></textarea><br/><br/>
+                  placeholder = "try: I love tensorflow" onkeyup="showsubmitBtn(this.value)"></textarea><br/><br/>
             <input type="submit" value="Test it out!"  onclick="myFunction()">
 
 		</form>
@@ -70,7 +69,7 @@ The model is trained and optimized for greater-than-word length text, such as se
 <button class="refresh" onClick="window.location.reload();">
    Try again </button>
     <div class="boxNumber">
-        The distance at this array element is:
+        The distance at this array element is: (Mutiplied by 5000)
         <span class="distance"></span>
    </div>
 <div class='number'></div>
