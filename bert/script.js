@@ -32,19 +32,27 @@ var showsubmitBtn = function(str){
 }
 
 
-var time = 0;
+var time = false;
 
-function reCoverSpecific(x){
+/**function reCoverSpecific(x){
 console.log(time)
-if(time == 0){
+if(time == false){
     console.log('change')
     x.style.filter = 'invert(0%)';
     x.style.width = '4px';
-    var time = 1;
-    setTimeout(function(){var time = 0},5000)
+    time = true;
+    setTimeout(function(){time = false},0)
 }
-}
+}**/
 
+function reCoverSpecific(x){
+setTimeout(function(){
+    console.log('change')
+    x.style.filter = 'invert(0%)';
+    x.style.width = '4px';
+    time = true;
+    },2000)
+}
 
 function myFunction() {
   event.preventDefault();
@@ -125,8 +133,7 @@ function myFunction() {
           var arr_diff_visual = `<div id="visual" 
           backGround="rgb(${100+arr_diff_pow_visual*2}, 164, 169)" 
           onMouseOver=" this.style.filter='invert(75%)';this.style.width='20px'; displayNumber(this)"  
-          onMouseOut= " setTimeout(reCover,5000)"     
-          
+          onMouseOut= " reCoverSpecific(this)"    
 
           style="display：inline-block; 
           width:4px;
