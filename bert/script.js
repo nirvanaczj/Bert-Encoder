@@ -31,10 +31,10 @@ var showsubmitBtn = function(str){
 }
 }
 
-
+/**
 var time = false;
 
-/**function reCoverSpecific(x){
+function reCoverSpecific(x){
 console.log(time)
 if(time == false){
     console.log('change')
