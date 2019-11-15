@@ -126,7 +126,7 @@ h2:hover{
     font-size:1em;
     top:30px;
     right:30px;
-    border-radius:15px;
+    border-radius:8px;
     color:darkgray;
     opacity:0.6;
     border:none;
@@ -134,6 +134,12 @@ h2:hover{
     display:none;
 }
 
+/*
+#distance{
+    background:white;
+    
+}
+*/
 .boxNumber{
     width:460px;
     height:50px;
@@ -144,7 +150,7 @@ h2:hover{
     line-height:50px;
     text-align: center;
     right:30px;
-    border-radius:15px;
+    border-radius:8px;
     color:darkgray;
     opacity:0.6;
     border:none;
@@ -194,7 +200,7 @@ a{
 input[type=text], select,textarea {
   width: 100%;
   padding: 12px 20px 12px 0px;
-  font-size:2em;
+  font-size:2.5vw;
   margin: 8px 0;
   color:white;
   font-family: 'Big Shoulders Display', cursive;    
@@ -221,7 +227,7 @@ input[type=submit] {
   color: white;
   padding: 14px 20px 14px 0px;
   text-align: left;
-  font-size:1.4em;
+  font-size:1.8vw;
   border:none;
   border-radius: 4px;
   cursor: pointer;

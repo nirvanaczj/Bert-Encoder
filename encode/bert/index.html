@@ -15,8 +15,10 @@ Trying my best to encode...
 </div>
 
 <div class="cursor"></div>
+<!--    <div id ="distance">-->
 <h2 id='euclidean'></h2><br><br>
 <h2 id='cosine'></h2>
+<!--    </div>-->
     <div id="visualization">
     
     </div>
@@ -56,12 +58,12 @@ Finally, bert-as-service uses BERT as a sentence encoder and hosts it as a servi
                   rows = "2"
                   cols = "40"
                   onkeyup="showsubmitBtn(this.value)"
-                  placeholder = "try: I am hungry" ></textarea><br/><br/>
+                  placeholder = "try: I am hungry" ></textarea>
             <textarea 
                   id="text2"
                   rows = "2"
                   cols = "40"
-                  placeholder = "try: I want to eat something" onkeyup="showsubmitBtn(this.value)"></textarea><br/><br/>
+                  placeholder = "try: I want to eat something" onkeyup="showsubmitBtn(this.value)"></textarea>
             <input type="submit" value="Test it out!"  onclick="myFunction()">
 
 		</form>
