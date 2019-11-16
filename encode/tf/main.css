@@ -9,7 +9,7 @@ body{
     font-family: 'Big Shoulders Display', cursive;
     font-size:1.4em;
     cursor:none;
-    margin:-15px 0px 0px 50px;
+    margin:15px 0px 0px 50px;
     overflow-x:hidden;
 }
 body::-webkit-scrollbar {
@@ -30,6 +30,48 @@ h1{
     border:5px black solid;
     width:45vw;
     text-align: center;
+}
+
+#popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(255,255,255,0.5);
+/*    opacity:0.6;*/
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    display:none;
+}
+
+.togglepopup{
+    width:100px;
+    height:50px;
+    position:fixed;
+    color:darkgray;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size:1em;
+    top:110px;
+    right:30px;
+    border-radius:6px;
+    opacity:0.6;
+    border:none;
+    cursor:none;
+    display:none;
+}
+.togglepopup:hover{
+    opacity:1;
+}
+#popupwindow{
+    box-sizing: border-box;
+    padding:20px;
+    background:white;
+    opacity:0.85;
+    width:20vw;
+    border-radius: 5px;
+    border:3px black solid;
 }
 
 .left{
@@ -99,9 +141,8 @@ h2:hover{
 #euclidean{
     z-index: 100;
     color:black;
-    position:fixed;
-    font-size:1.6em;
-    margin-left:40px;
+/*    position:fixed;*/
+    font-size:1.4vw;
     color:white;
     background: linear-gradient(to right, #A4A9AD 0%, #FBBB37 100%);
     -webkit-background-clip: text;
@@ -111,9 +152,8 @@ h2:hover{
 #cosine{
     z-index: 100;
     color:black;
-    position:fixed;
-    font-size:1.6em;
-    margin-left:40px;
+/*    position:fixed;*/
+    font-size:1.4vw;
     color:white;
     background: linear-gradient(to right, #A4A9AD 0%, #FBBB37 100%);
     -webkit-background-clip: text;
@@ -121,33 +161,44 @@ h2:hover{
 }
 
 .refresh{
-    width:100px;
-    height:50px;
+    width:5vw;
+    height:40px;
     position:fixed;
     font-family: 'Big Shoulders Display', cursive;
-    font-size:1em;
-    top:30px;
-    right:30px;
-    border-radius:8px;
-    color:black;
+    font-size:1vw;
+    border-radius:3px;
+    color:darkgray;
     opacity:0.6;
     border:none;
     cursor:none;
-    display:none;
+}
+#closetab{
+    width:25PX;
+    height:25px;
+    font-size:16PX;
+    line-height: 25px;
+    border-radius:3px;
+    color:darkgray;
+    opacity:0.6;
+    border:none;
+    cursor:none;
 }
 
+#closetab:hover{
+    opacity:1;
+}
 .boxNumber{
     width:480px;
     height:50px;
     position:fixed;
     font-family: 'Big Shoulders Display', cursive;
     font-size:1em;
-    top:110px;
+    top:30px;
     line-height:50px;
     text-align: center;
     right:30px;
-    border-radius:8px;
-    color:black;
+    border-radius:6px;
+    color:darkgray;
     opacity:0.6;
     border:none;
     cursor:none;
@@ -180,7 +231,7 @@ h2:hover{
 
 .cursor{
     width:20px;
-    z-index:-100;
+    z-index:100;
     height:20px;
     border-radius:4px;
     position:absolute;

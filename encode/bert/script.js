@@ -6,7 +6,7 @@ if ('scrollRestoration' in history) {
 var cursor = document.querySelector('.cursor')
 var refresh = document.querySelector('.refresh')
 var boxNumber = document.querySelector('.boxNumber')
-
+var moreinfo = document.querySelector('.togglepopup')
 var cursorMove = function(event)
 {
 	//console.log(event.pageX)
@@ -31,19 +31,14 @@ var showsubmitBtn = function(str){
 }
 }
 
-/**
-var time = false;
-
-function reCoverSpecific(x){
-console.log(time)
-if(time == false){
-    console.log('change')
-    x.style.filter = 'invert(0%)';
-    x.style.width = '4px';
-    time = true;
-    setTimeout(function(){time = false},0)
+function closetab(){
+    document.getElementById("popup").style.display = "none"
 }
-}**/
+
+function togglepopup(){
+    document.getElementById("popup").style.display = "flex"
+}
+
 
 function reCoverSpecific(x){
 setTimeout(function(){
@@ -78,6 +73,7 @@ function myFunction() {
       body.style.overflowX = 'visible';    
       refresh.style.display = 'block';
       boxNumber.style.display = 'block';
+      moreinfo.style.display = 'block';
       var result_array =  JSON.parse(xmlhttp.responseText).prediction;
       var cosine =  JSON.parse(xmlhttp.responseText).cosine;
       var euclidean_api =  JSON.parse(xmlhttp.responseText).euclidean;
@@ -165,6 +161,8 @@ function myFunction() {
     var euclidean = `<h2 style="margin-left:5px;position:fixed;left:0px;">The Euclidean distance of this two sentences is :${arr_euclidean}.</h2>`; 
     var euclidean_str = `The Euclidean distance of this two sentences is :${arr_euclidean}.` 
     var cosine_str = `The Cosine distance of this two sentences is :${cosine}.` 
+    euclidean_str = `${arr_euclidean}` 
+    cosine_str = `${cosine}` 
     var b = 0;
     var d = 0;
     var typeWriter = function(){
