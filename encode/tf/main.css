@@ -43,7 +43,7 @@ h1{
     display:flex;
     align-items: center;
     justify-content: center;
-    display:none;
+/*    display:none;*/
 }
 
 .togglepopup{
@@ -231,7 +231,7 @@ h2:hover{
 
 .cursor{
     width:20px;
-    z-index:100;
+    z-index:-100;
     height:20px;
     border-radius:4px;
     position:absolute;
