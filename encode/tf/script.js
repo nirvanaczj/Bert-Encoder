@@ -61,7 +61,7 @@ function myFunction() {
   $('form').fadeOut(0);
   var body = document.body;
   body.style.margin = '0px';
-  cursor.style.backgroundColor ='gray';
+  cursor.style.backgroundColor ='#A4A9AD';
   var text1 = document.getElementById("text1").value;
   var text2 = document.getElementById("text2").value;
   //$('.wrapper').addClass('form-success'); 
